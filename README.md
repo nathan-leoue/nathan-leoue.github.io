@@ -1,3 +1,3 @@
-# nathan-leoue.github.io
+## Nathan's portfolio
 
-GitHub push + commit test
+Click [here](https://nathan-leoue.github.io/) to check my portfolio!
