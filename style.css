@@ -1,0 +1,89 @@
+:root {
+  --bg:        #0d0d0f;
+  --bg-card:   #141416;
+  --bg-pill:   #1e1e22;
+  --border:    #2a2a2f;
+  --accent:    #7b6ef6;
+  --accent-dim:#3d3780;
+  --text:      #e8e8f0;
+  --text-muted:#6b6b80;
+  --radius:    12px;
+}
+
+html { scroll-behavior: smooth; }
+
+h3 { font-size: 1.6rem;}
+h5 { font-size: 1.1rem; margin: 0px;}
+
+div{
+    border: 1px solid black;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.mainpage{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+}
+
+.about-me{
+    display: flex;
+    gap: 10px;
+}
+
+.left-abtme{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-abtme img{
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.right-abtme{
+    width: 75%;
+}
+
+.right-abtme p{
+    font-size: 1.2rem;
+}
+
+.skills-tech{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-display-area{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.card-tech{
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.pills{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.pills p{
+    background: var(--bg-pill);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+}
+
