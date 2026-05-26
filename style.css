@@ -182,3 +182,58 @@ body {
     transform: scale(1.03);
     box-shadow: 0 5px 15px rgba(123, 110, 246, 0.4);
 }
+
+/* ==========================================================================
+   BLOCK RESPONSIVE (MOBILE & TABLETTE)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    /* Réduction des marges globales de la page pour ne pas perdre d'espace */
+    .mainpage {
+        padding: 20px 20px;
+        gap: 40px;
+    }
+
+    /* La section à propos passe d'une ligne à une colonne */
+    .about-me {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* L'avatar et le texte prennent désormais toute la largeur disponible */
+    .left-abtme, 
+    .right-abtme {
+        width: 100%;
+    }
+
+    /* Alignement centré du titre "About me" au-dessus de la photo sur mobile */
+    .left-abtme {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Ajustement du texte pour qu'il ne soit pas trop gros sur petit écran */
+    .right-abtme {
+        padding-top: 0px;
+        text-align: justify;
+    }
+    
+    .right-abtme p {
+        font-size: 1.05rem;
+    }
+
+    /* Réduction de l'espace entre les cartes de compétences */
+    .card-display-area {
+        gap: 20px;
+    }
+
+    /* Gestion des cartes pour qu'elles s'empilent bien si l'écran est minuscule */
+    .card-tech {
+        min-width: 100%;
+    }
+    
+    /* Légère réduction de la hauteur de la carte projet sur mobile pour l'esthétique */
+    .project-card {
+        height: 220px;
+    }
+}
