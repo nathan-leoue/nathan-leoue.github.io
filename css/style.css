@@ -26,6 +26,11 @@ h5 { font-size: 1.2rem; margin: 0px;}
   box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
 body {
     margin: 0px;
     padding: 0px;
@@ -256,20 +261,34 @@ a .button:hover {
     transform: scale(1.03);
 }
 
-a {
+.project-top a {
     color: var(--accent);
     padding: 0.5rem;
     font-weight: 600;
     transition: var(--transition-smooth);
+    text-decoration: none;
 }
 
 .project-top a {
     margin-bottom: 0.83em;
 }
 
-a:hover {
+.project-top a:hover {
     transform: scale(1.03);
     text-shadow: 0 5px 15px rgba(123, 110, 246, 0.4);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+footer a > p {
+    border-bottom: 1px solid currentColor;
 }
 
 #projects-grid {

@@ -2,7 +2,7 @@ export const PROJECTS = [
   {
     id: "mei-bot",
     title: "Mei - Discord Bot",
-    description: "Local Discord bot alimented by Ollama/Mistral with history per channel.",
+    description: "Local Discord bot alimented by Ollama/Mistral with history per channel and memory per user.",
     tags: ["Python", "Ollama", "Discord"],
     date: "2026-03",
     url: "https://github.com/nathan-leoue",
