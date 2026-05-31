@@ -20,7 +20,15 @@ html {
 }
 
 h3 { font-size: 1.6rem;}
-h5 { font-size: 1.2rem; margin: 0px;}
+h5 { font-size: 1.2rem; margin: 0px; width: 100%; display: flex; gap: 0.5rem; justify-content: center; align-items: center;}
+
+h5::before,
+h5::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--text-muted);
+}
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -263,7 +271,7 @@ a .button:hover {
 
 .project-top a {
     color: var(--accent);
-    padding: 0.5rem;
+    padding: 0.5rem 0rem;
     font-weight: 600;
     transition: var(--transition-smooth);
     text-decoration: none;
@@ -283,8 +291,13 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    flex-wrap: wrap;
     font-size: 0.8rem;
     color: var(--text-muted);
+}
+
+footer p {
+    margin: 0px;
 }
 
 footer a > p {
