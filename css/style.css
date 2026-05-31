@@ -30,6 +30,7 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: var(--bg);
+    min-width: 400px;
 }
 
 .mainpage {
@@ -159,7 +160,7 @@ body {
 }
 
 .project-card {
-    height: 300px;
+    min-height: 300px;
     width: 100%;
     background-color: var(--bg-card);
     border: 1px solid var(--border);
@@ -205,7 +206,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    align-self: stretch
 }
 
 .text-content ul {
@@ -271,6 +272,14 @@ a:hover {
     text-shadow: 0 5px 15px rgba(123, 110, 246, 0.4);
 }
 
+#projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 30px 50px;
+    max-width: 1070px;
+    margin: auto;
+}
 
 
 /* ==========================================================================
@@ -318,12 +327,6 @@ a:hover {
     }
 
     /* Gestion des cartes pour qu'elles s'empilent bien si l'écran est minuscule */
-   
-    
-    /* Légère réduction de la hauteur de la carte projet sur mobile pour l'esthétique */
-    .project-card {
-        height: 220px;
-    }
 
     /* Sur mobile la carte passe en colonne : image au-dessus, texte en dessous */
     .project-card {

@@ -14,7 +14,7 @@ const html = `
         <div class="text-content">
             <div class="text-content-top">
                 <ul>
-                    Tags :${tagsHtml}
+                    ${tagsHtml}
                 </ul>
                 <p>${latest.description}</p>
             </div>
