@@ -5,7 +5,7 @@ export const PROJECTS = [
     description: "Local Discord bot alimented by Ollama/Mistral with history per channel.",
     tags: ["Python", "Ollama", "Discord"],
     date: "2025-03",
-    url: null,
-    image: "assets/mei-preview.png"
+    url: "https://github.com/nathan-leoue",
+    image: "assets/projects/mei-preview.jpg"
   }
 ];
