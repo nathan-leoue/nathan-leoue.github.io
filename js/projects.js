@@ -20,7 +20,7 @@ function project_card(project) {
                     <p>${project.description}</p>
                 </div>
 
-                <a href="${project.url}" class="button github-link">See it on GitHub <i class="fa-brands fa-github"></i></a>
+                <a href="${project.url}"  target="_blank" class="button github-link">See it on GitHub <i class="fa-brands fa-github"></i></a>
             </div>
         </div>
     `;

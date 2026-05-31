@@ -19,7 +19,7 @@ const html = `
                 <p>${latest.description}</p>
             </div>
 
-            <a href="${latest.url}" class="button github-link">See it on GitHub <i class="fa-brands fa-github"></i></a>
+            <a href="${latest.url}"  target="_blank" class="button github-link">See it on GitHub <i class="fa-brands fa-github"></i></a>
         </div>
     </div>
 `;
