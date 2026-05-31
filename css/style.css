@@ -37,6 +37,8 @@ body {
     flex-direction: column;
     gap: 50px;
     padding: 30px 50px;
+    max-width: 1070px;
+    margin: auto;
 }
 
 .about-me {
@@ -73,7 +75,7 @@ body {
 
 .right-abtme {
     width: 75%;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 .right-abtme p {
