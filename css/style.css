@@ -44,6 +44,9 @@ body {
     padding: 0px;
     background-color: var(--bg);
     min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .mainpage {
@@ -312,7 +315,6 @@ footer a > p {
     max-width: 1070px;
     margin: auto;
 }
-
 
 /* ==========================================================================
    BLOCK RESPONSIVE (MOBILE & TABLETTE)
