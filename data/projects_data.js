@@ -1,5 +1,14 @@
 export const PROJECTS = [
   {
+    id: "home-lab",
+    title: "Home lab - NAS avec laptop rénové",
+    description: "Self-hosted home server running on an old Samsung NC10 netbook Debian 12, Pi-hole, SyncThing, and SSH access.",
+    tags: ["Local", "Linux", "NAS", "Debian"],
+    date: "2026-05",
+    url: "https://github.com/nathan-leoue",
+    image: "assets/projects/server.jpg"
+  },
+  {
     id: "mei-bot",
     title: "Mei - Discord Bot",
     description: "Local Discord bot alimented by Ollama/Mistral with history per channel and memory per user.",
