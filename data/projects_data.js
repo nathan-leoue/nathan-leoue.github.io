@@ -1,7 +1,7 @@
 export const PROJECTS = [
   {
     id: "home-lab",
-    title: "Home lab - NAS avec laptop rénové",
+    title: "Home lab - NAS with renoved laptop",
     description: "Self-hosted home server running on an old Samsung NC10 netbook Debian 12, Pi-hole, SyncThing, and SSH access.",
     tags: ["Local", "Linux", "NAS", "Debian"],
     date: "2026-05",
