@@ -33,7 +33,7 @@ export const PROJECTS = [
     },
     tags: ["Linux", "NAS", "Self-hosting"],
     date: "2026-05",
-    url: "https://github.com/nathan-leoue",
+    url: "https://github.com/nathan-leoue/Serveur-home-lab",
     image: "assets/projects/server.jpg",
   },
   {
