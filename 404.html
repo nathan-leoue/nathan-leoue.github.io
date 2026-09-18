@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Nathan Leoue</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#0d0c11">
+    <link rel="icon" href="https://github.com/nathan-leoue.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="shell topbar-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-dot" aria-hidden="true"></span>
+                <span class="brand-name">Nathan Leoue</span>
+            </a>
+            <div class="topbar-actions">
+                <div class="lang-switch" role="group" data-lang-switch="fr"
+                     data-i18n-attr="aria-label:a11y.langGroup">
+                    <span class="lang-thumb" aria-hidden="true"></span>
+                    <button class="lang-btn" type="button" data-lang="fr" lang="fr">FR</button>
+                    <button class="lang-btn" type="button" data-lang="en" lang="en">EN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="shell notfound">
+        <div>
+            <p class="notfound-code">404</p>
+            <h1 data-i18n="notfound.title"></h1>
+            <p data-i18n="notfound.text"></p>
+            <a class="btn btn-primary" href="index.html">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                <span data-i18n="nav.backHome"></span>
+            </a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <p>© <span data-year>2026</span> Nathan Leoue — <span data-i18n="footer.rights"></span></p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initI18n } from "./js/i18n.js";
+        import { initFooterYear } from "./js/ui.js";
+
+        initI18n();
+        initFooterYear();
+    </script>
+</body>
+</html>

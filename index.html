@@ -3,88 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathan Leoue portfolio</title>
-    <link rel="icon" href="https://github.com/nathan-leoue.png">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-    <div class="mainpage">
-        <nav>
-            <ul>
-                <li></li>
-            </ul>
-            <div class="langue">
-            FR
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-            EN
-            </div>
-        </nav>
-        <div class="section about-me">
-            <div class="left-abtme">
-                <h3>About me</h3>
-                <a href="https://github.com/nathan-leoue"><img src="https://github.com/nathan-leoue.png" alt="Photo de profil"></a>
-            </div>
-            <div class="right-abtme">
-                <p>
-                    Student in BTS SIO - île de France <br>
-                    Passionate about computers since childhood, I'm currently pursuing a work-study program in web development and cybersecurity. I love understanding how things work, whether it's setting up a home lab, automating my things in my system, or delving into the inner workings of a CTF. I'm curious, independent, and always fully committed to what interests me.
-                </p>
-            </div>
-        </div>
-        <div class="section skills-tech">
-            <h3>Skills & Technologies</h3>
-            <div class="card-display-area">
-                <div class="card-tech">
-                    <h5>Dev</h5>
-                    <div class="pills">
-                        <p>HTML</p>
-                        <p>CSS</p>
-                        <p>JavaScript</p>
-                        <p>PHP</p>
-                        <p>SQL</p>
-                    </div>
-                </div>
-                <div class="card-tech">
-                    <h5>Network</h5>
-                    <div class="pills">
-                        <p>VLAN</p>
-                        <p>Cyberecurity</p>
-                        <p>Packet tracer</p>
-                    </div>
-                </div>
-                <div class="card-tech">
-                    <h5>System</h5>
-                    <div class="pills">
-                        <p>Server maintenance</p>
-                        <p>Self-hosting</p>
-                        <p>Local AI config</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section projects">
-            <div class="project-top">
-                <h3>My latest project</h3>
-                <a href="projects.html">Click here to see all my projects <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="projects-section">
-                <div class="project-card" id="project-preview">
-                    <!-- Js injected here -->
+    <title>Nathan Leoue — Développement web & systèmes</title>
+    <meta name="description" content="Portfolio de Nathan Leoue, étudiant en BTS SIO en Île-de-France : développement web, systèmes Linux et cybersécurité.">
+    <meta name="author" content="Nathan Leoue">
+    <meta name="theme-color" content="#0d0c11">
 
+    <!-- Aperçu lors d'un partage (LinkedIn, Discord, iMessage…) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nathan Leoue — Développement web & systèmes">
+    <meta property="og:description" content="Étudiant en BTS SIO en Île-de-France. Home lab, IA locale, développement web.">
+    <meta property="og:url" content="https://nathan-leoue.github.io/">
+    <meta property="og:image" content="https://github.com/nathan-leoue.png">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="https://github.com/nathan-leoue.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-title-key="meta.title">
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu</a>
+
+    <!-- ============================ EN-TÊTE ============================ -->
+    <header class="topbar">
+        <div class="shell topbar-inner">
+            <a class="brand" href="index.html" data-i18n-attr="aria-label:nav.home">
+                <span class="brand-dot" aria-hidden="true"></span>
+                <span class="brand-name">Nathan Leoue</span>
+            </a>
+
+            <nav class="nav-links" data-i18n-attr="aria-label:a11y.nav">
+                <a href="#about" data-i18n="nav.about">À propos</a>
+                <a href="#skills" data-i18n="nav.skills">Compétences</a>
+                <a href="#projects" data-i18n="nav.projects">Projets</a>
+                <a href="#certifications" data-i18n="nav.certs">Certifications</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+            </nav>
+
+            <div class="topbar-actions">
+                <div class="lang-switch" role="group" data-lang-switch="fr"
+                     data-i18n-attr="aria-label:a11y.langGroup">
+                    <span class="lang-thumb" aria-hidden="true"></span>
+                    <button class="lang-btn" type="button" data-lang="fr" lang="fr">FR</button>
+                    <button class="lang-btn" type="button" data-lang="en" lang="en">EN</button>
                 </div>
+
+                <a class="btn btn-outline btn-sm" href="assets/cv/cv-nathan-leoue.pdf" download>
+                    <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                    <span data-i18n="nav.cv">CV</span>
+                </a>
             </div>
         </div>
-    </div>
-    <footer>
-        <p>© nathan-leoue 2026. All rights reserved.</p>•
-        <a href="mailto:nathan.leoue.pro@gmail.com" target="_blank"><p><i class="fa-solid fa-envelope"></i> Contact me</p></a>•
-        <a href="https://github.com/nathan-leoue" target="_blank"><p><i class="fa-brands fa-github"></i> GitHub</p></a>•
-        <a href="https://www.linkedin.com/in/nathan-leoue-828619381/" target="_blank"><p><i class="fa-brands fa-linkedin"></i> LinkedIn</p></a>
+    </header>
+
+    <main id="main">
+        <!-- ============================ HERO ============================ -->
+        <section class="hero">
+            <div class="shell hero-inner">
+                <div class="hero-text">
+                    <h1 class="hero-title">Nathan Leoue</h1>
+                    <p class="hero-role" data-i18n="hero.role"></p>
+                    <p class="hero-pitch" data-i18n="hero.pitch"></p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="projects.html" data-i18n="hero.ctaProjects"></a>
+                        <a class="btn btn-outline" href="assets/cv/cv-nathan-leoue.pdf" download>
+                            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                            <span data-i18n="hero.ctaCv"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Encadré d'identité, inspiré de la sortie de fastfetch -->
+                <aside class="fetch">
+                    <div class="fetch-head">
+                        <a class="fetch-avatar" href="https://github.com/nathan-leoue" target="_blank" rel="noopener">
+                            <img src="https://github.com/nathan-leoue.png"
+                                 data-i18n-attr="alt:a11y.avatar" width="72" height="72">
+                        </a>
+                        <div class="fetch-id">
+                            <p class="mono fetch-user">nathan<span>@</span>portfolio</p>
+                            <span class="fetch-rule" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <dl class="fetch-list">
+                        <div class="fetch-row">
+                            <dt class="mono" data-i18n="fetch.formation"></dt>
+                            <dd data-i18n="fetch.formationValue"></dd>
+                        </div>
+                        <div class="fetch-row">
+                            <dt class="mono" data-i18n="fetch.focus"></dt>
+                            <dd data-i18n="fetch.focusValue"></dd>
+                        </div>
+                        <div class="fetch-row">
+                            <dt class="mono" data-i18n="fetch.system"></dt>
+                            <dd data-i18n="fetch.systemValue"></dd>
+                        </div>
+                        <div class="fetch-row">
+                            <dt class="mono" data-i18n="fetch.now"></dt>
+                            <dd data-i18n="fetch.nowValue"></dd>
+                        </div>
+                        <div class="fetch-row">
+                            <dt class="mono" data-i18n="fetch.contact"></dt>
+                            <dd><a href="mailto:nathan.leoue.pro@gmail.com">nathan.leoue.pro@gmail.com</a></dd>
+                        </div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+
+        <!-- =========================== À PROPOS =========================== -->
+        <section class="band" id="about">
+            <div class="shell band-grid">
+                <div class="band-side">
+                    <h2 class="band-title" data-i18n="about.title"></h2>
+                </div>
+                <div class="band-main prose">
+                    <p data-i18n="about.p1"></p>
+                    <p data-i18n="about.p2"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= COMPÉTENCES ========================= -->
+        <section class="band" id="skills">
+            <div class="shell band-grid">
+                <div class="band-side">
+                    <h2 class="band-title" data-i18n="skills.title"></h2>
+                    <p class="band-meta mono" id="skills-count"></p>
+                </div>
+                <div class="band-main">
+                    <div class="skill-grid">
+                        <article class="skill-card">
+                            <h3><i class="fa-solid fa-code" aria-hidden="true"></i> <span data-i18n="skills.dev"></span></h3>
+                            <p class="skill-note" data-i18n="skills.devNote"></p>
+                            <ul class="tag-list">
+                                <li class="tag">HTML</li>
+                                <li class="tag">CSS</li>
+                                <li class="tag">JavaScript</li>
+                                <li class="tag">PHP</li>
+                                <li class="tag">SQL</li>
+                                <li class="tag">Python</li>
+                            </ul>
+                        </article>
+
+                        <article class="skill-card">
+                            <h3><i class="fa-solid fa-network-wired" aria-hidden="true"></i> <span data-i18n="skills.sys"></span></h3>
+                            <p class="skill-note" data-i18n="skills.sysNote"></p>
+                            <ul class="tag-list">
+                                <li class="tag">Linux / Debian</li>
+                                <li class="tag" data-i18n="tag.Self-hosting"></li>
+                                <li class="tag">SSH</li>
+                                <li class="tag">VLAN</li>
+                                <li class="tag">Packet Tracer</li>
+                                <li class="tag" data-i18n="tag.Cybersecurity"></li>
+                            </ul>
+                        </article>
+
+                        <article class="skill-card">
+                            <h3><i class="fa-solid fa-terminal" aria-hidden="true"></i> <span data-i18n="skills.tools"></span></h3>
+                            <p class="skill-note" data-i18n="skills.toolsNote"></p>
+                            <ul class="tag-list">
+                                <li class="tag">Git</li>
+                                <li class="tag">Bash</li>
+                                <li class="tag">Neovim</li>
+                                <li class="tag">Ollama</li>
+                                <li class="tag">CTF</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================== PROJETS =========================== -->
+        <section class="band" id="projects">
+            <div class="shell band-grid">
+                <div class="band-side">
+                    <h2 class="band-title" data-i18n="projects.title"></h2>
+                    <p class="band-meta mono" id="projects-count"></p>
+                    <a class="band-link" href="projects.html">
+                        <span data-i18n="projects.seeAll"></span>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="band-main">
+                    <p class="band-intro" data-i18n="projects.homeIntro"></p>
+                    <!-- Cartes générées par js/index.js -->
+                    <div class="project-list" id="home-projects"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== CERTIFICATIONS ======================== -->
+        <section class="band" id="certifications">
+            <div class="shell band-grid">
+                <div class="band-side">
+                    <h2 class="band-title" data-i18n="certs.title"></h2>
+                </div>
+                <div class="band-main">
+                    <p class="band-intro" data-i18n="certs.intro"></p>
+                    <!-- Cartes générées par js/index.js -->
+                    <div class="cert-list" id="certifications-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================== CONTACT =========================== -->
+        <section class="band" id="contact">
+            <div class="shell band-grid">
+                <div class="band-side">
+                    <h2 class="band-title" data-i18n="contact.title"></h2>
+                </div>
+                <div class="band-main">
+                    <p class="band-intro" data-i18n="contact.intro"></p>
+
+                    <ul class="contact-list">
+                        <li>
+                            <a href="mailto:nathan.leoue.pro@gmail.com">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                <span class="contact-label" data-i18n="contact.email"></span>
+                                <span class="contact-value mono">nathan.leoue.pro@gmail.com</span>
+                                <i class="fa-solid fa-arrow-right contact-arrow" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/nathan-leoue" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                <span class="contact-label" data-i18n="contact.github"></span>
+                                <span class="contact-value mono">@nathan-leoue</span>
+                                <i class="fa-solid fa-arrow-right contact-arrow" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/nathan-leoue-828619381/" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                                <span class="contact-label" data-i18n="contact.linkedin"></span>
+                                <span class="contact-value mono">nathan-leoue</span>
+                                <i class="fa-solid fa-arrow-right contact-arrow" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="assets/cv/cv-nathan-leoue.pdf" download>
+                                <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                                <span class="contact-label" data-i18n="contact.cv"></span>
+                                <span class="contact-value mono" data-i18n="contact.cvValue"></span>
+                                <i class="fa-solid fa-arrow-down contact-arrow" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================== PIED DE PAGE =========================== -->
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <p>© <span data-year>2026</span> Nathan Leoue — <span data-i18n="footer.rights"></span></p>
+            <p class="footer-note mono" data-i18n="footer.built"></p>
+            <a class="footer-top" href="#main">
+                <span data-i18n="footer.top"></span>
+                <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
     </footer>
+
     <script type="module" src="js/index.js"></script>
 </body>
 </html>

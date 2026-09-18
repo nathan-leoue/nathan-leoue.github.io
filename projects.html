@@ -3,13 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathan's projects</title>
+    <title>Projets — Nathan Leoue</title>
+    <meta name="description" content="Tous les projets de Nathan Leoue : home lab, IA locale, développement web et outils système.">
+    <meta name="theme-color" content="#0d0c11">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projets — Nathan Leoue">
+    <meta property="og:description" content="Home lab, IA locale, développement web et outils système.">
+    <meta property="og:url" content="https://nathan-leoue.github.io/projects.html">
+    <meta property="og:image" content="https://github.com/nathan-leoue.png">
+
     <link rel="icon" href="https://github.com/nathan-leoue.png">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="body">
-    <div id="projects-grid"></div>
+
+<body data-title-key="meta.titleProjects">
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu</a>
+
+    <header class="topbar">
+        <div class="shell topbar-inner">
+            <a class="brand" href="index.html" data-i18n-attr="aria-label:nav.home">
+                <span class="brand-dot" aria-hidden="true"></span>
+                <span class="brand-name">Nathan Leoue</span>
+            </a>
+
+            <nav class="nav-links" data-i18n-attr="aria-label:a11y.nav">
+                <a href="index.html#about" data-i18n="nav.about"></a>
+                <a href="index.html#skills" data-i18n="nav.skills"></a>
+                <a href="projects.html" class="is-current" data-i18n="nav.projects"></a>
+                <a href="index.html#certifications" data-i18n="nav.certs"></a>
+                <a href="index.html#contact" data-i18n="nav.contact"></a>
+            </nav>
+
+            <div class="topbar-actions">
+                <div class="lang-switch" role="group" data-lang-switch="fr"
+                     data-i18n-attr="aria-label:a11y.langGroup">
+                    <span class="lang-thumb" aria-hidden="true"></span>
+                    <button class="lang-btn" type="button" data-lang="fr" lang="fr">FR</button>
+                    <button class="lang-btn" type="button" data-lang="en" lang="en">EN</button>
+                </div>
+
+                <a class="btn btn-outline btn-sm" href="assets/cv/cv-nathan-leoue.pdf" download>
+                    <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                    <span data-i18n="nav.cv"></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-head">
+            <div class="shell">
+                <a class="back-link" href="index.html">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    <span data-i18n="nav.backHome"></span>
+                </a>
+                <h1 class="page-title" data-i18n="projects.title"></h1>
+                <p class="page-intro" data-i18n="projects.pageIntro"></p>
+
+                <div class="filter-bar">
+                    <!-- Boutons générés par js/projects.js à partir des tags -->
+                    <div class="filters" id="projects-filters" role="group"></div>
+                    <p class="band-meta mono" id="projects-count"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="band band-flush">
+            <div class="shell">
+                <!-- Cartes générées par js/projects.js -->
+                <div class="project-list" id="projects-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <p>© <span data-year>2026</span> Nathan Leoue — <span data-i18n="footer.rights"></span></p>
+            <p class="footer-note mono" data-i18n="footer.built"></p>
+            <a class="footer-top" href="#main">
+                <span data-i18n="footer.top"></span>
+                <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+    </footer>
+
     <script type="module" src="js/projects.js"></script>
 </body>
 </html>

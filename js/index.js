@@ -1,27 +1,47 @@
+/**
+ * Page d'accueil : affiche les derniers projets et les certifications,
+ * puis redessine tout si on change de langue.
+ */
+
 import { PROJECTS } from "../data/projects_data.js";
+import { CERTIFICATIONS } from "../data/certifications_data.js";
+import { initI18n, onLanguageChange, count } from "./i18n.js";
+import {
+  sortByDate,
+  renderProjects,
+  renderCertifications,
+  initProjectModal,
+} from "./cards.js";
+import { initUI } from "./ui.js";
 
-const latest = PROJECTS[0];
+/** Nombre de projets mis en avant sur l'accueil (les plus récents). */
+const HOME_PROJECTS = 2;
 
-const tagsHtml = latest.tags.map(tag => `<li>${tag}</li>`).join("");
+const latestProjects = sortByDate(PROJECTS).slice(0, HOME_PROJECTS);
 
-const html = `
-    <div class="title-project-card">
-        <h5>${latest.title}</h5>
-        <p>${latest.date}</p>
-    </div>
-    <div class="content-project-card">
-        <img src="${latest.image}" alt="Project preview picture">
-        <div class="text-content">
-            <div class="text-content-top">
-                <ul>
-                    ${tagsHtml}
-                </ul>
-                <p>${latest.description}</p>
-            </div>
+const projectsSlot = document.getElementById("home-projects");
+const certificationsSlot = document.getElementById("certifications-list");
+const projectsCount = document.getElementById("projects-count");
+const skillsCount = document.getElementById("skills-count");
 
-            <a href="${latest.url}"  target="_blank" class="button github-link">See it on GitHub <i class="fa-brands fa-github"></i></a>
-        </div>
-    </div>
-`;
+function render() {
+  renderProjects(projectsSlot, latestProjects);
+  renderCertifications(certificationsSlot, CERTIFICATIONS);
 
-document.getElementById("project-preview").innerHTML = html;
+  if (projectsCount) {
+    projectsCount.textContent =
+      PROJECTS.length === 1 ? count("projects.countOne", 1) : count("projects.countMany", PROJECTS.length);
+  }
+
+  // Compté depuis la page : ajouter une carte de compétences suffit,
+  // pas besoin de penser à mettre le chiffre à jour.
+  if (skillsCount) {
+    skillsCount.textContent = count("skills.count", document.querySelectorAll(".skill-card").length);
+  }
+}
+
+initI18n();
+initUI();
+initProjectModal(PROJECTS);
+render();
+onLanguageChange(render);

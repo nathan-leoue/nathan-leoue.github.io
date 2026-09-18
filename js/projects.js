@@ -1,74 +1,85 @@
+/**
+ * Page Projets : la liste complète, avec un filtre par technologie.
+ *
+ * Le filtre actif est gardé dans une simple variable ; à chaque changement
+ * (clic sur un filtre ou changement de langue) on redessine la grille.
+ */
+
 import { PROJECTS } from "../data/projects_data.js";
+import { initI18n, onLanguageChange, t, count, tagLabel } from "./i18n.js";
+import { sortByDate, collectTags, renderProjects, initProjectModal, esc } from "./cards.js";
+import { initUI } from "./ui.js";
 
-PROJECTS.forEach((project) => project_card(project));
+const ALL = "*";
 
-function project_card(project) {
-    const tagsHtml = project.tags.map(tag => `<li>${tag}</li>`).join("");
+const grid = document.getElementById("projects-grid");
+const filtersSlot = document.getElementById("projects-filters");
+const countSlot = document.getElementById("projects-count");
 
-    let html = `
-        <div class="title-project-card">
-            <h5>${project.title}</h5>
-            <p>${project.date}</p>
-        </div>
-        <div class="content-project-card">
-            <img src="${project.image}" alt="Project preview picture" class="project-picture">
-            <div class="text-content">
-                <div class="text-content-top">
-                    <ul>
-                        ${tagsHtml}
-                    </ul>
-                    <p>${project.description}</p>
-                </div>
+const sorted = sortByDate(PROJECTS);
+const tags = collectTags(PROJECTS);
 
-                <a href="${project.url}"  target="_blank" class="button github-link">See it on GitHub <i class="fa-brands fa-github"></i></a>
-            </div>
-        </div>
-    `;
+let activeTag = ALL;
 
-    const card = document.createElement("div");
-    card.classList.add("project-card");
-    card.innerHTML = html;
-    document.getElementById("projects-grid").appendChild(card);
+/** Projets correspondant au filtre courant. */
+function visibleProjects() {
+  if (activeTag === ALL) return sorted;
+  return sorted.filter((project) => project.tags?.includes(activeTag));
 }
 
-/* --------Js card zoomé view--------- */
+function renderFilters() {
+  if (!filtersSlot) return;
 
-let bcard = document.getElementsByClassName("project-picture");
+  const buttons = [
+    `<button class="filter" type="button" data-tag="${ALL}">${esc(t("projects.filterAll"))}</button>`,
+    // data-tag garde toujours le nom d'origine : c'est lui qui sert à filtrer.
+    // Seul le texte affiché est traduit.
+    ...tags.map(
+      (tag) => `<button class="filter" type="button" data-tag="${esc(tag)}">${esc(tagLabel(tag))}</button>`
+    ),
+  ];
 
-for (let card of bcard){
-    card.addEventListener("click", () => {open()});
+  filtersSlot.innerHTML = buttons.join("");
+  filtersSlot.setAttribute("aria-label", t("projects.filterLabel"));
+  updateFilterState();
 }
 
-function open() {
-    console.log("click detecté")
-    
-    let view = `
-        <div id="card">Card zoomé</div>
-    `
-
-    if (!document.getElementById("bigcard")) {
-        const bigcard = document.createElement("div");
-        bigcard.classList.add("background-card");
-        bigcard.id = "bigcard"
-        bigcard.innerHTML = view;
-        document.getElementById("body").prepend(bigcard);
-
-        document.body.classList.add("no-scroll");
-
-        bigcard.addEventListener("click", () => {close()})
-
-        document.getElementById("card").addEventListener("click", (event) => {
-        event.stopPropagation();
-        });
-    }else{
-        console.log("la card zoomé est déjà ouverte")
-    }
-};
-
-function close() {
-    console.log("Fermeture")
-
-    document.getElementById("bigcard").remove()
-
-    document.body.classList.remove("no-scroll");
+function updateFilterState() {
+  filtersSlot?.querySelectorAll(".filter").forEach((button) => {
+    const active = button.dataset.tag === activeTag;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
 }
+
+function render() {
+  const list = visibleProjects();
+  renderProjects(grid, list);
+
+  if (countSlot) {
+    countSlot.textContent =
+      list.length === 1 ? count("projects.countOne", 1) : count("projects.countMany", list.length);
+  }
+}
+
+filtersSlot?.addEventListener("click", (event) => {
+  const button = event.target.closest(".filter");
+  if (!button) return;
+
+  activeTag = button.dataset.tag;
+  updateFilterState();
+  render();
+});
+
+initI18n();
+initUI();
+initProjectModal(PROJECTS);
+renderFilters();
+render();
+
+// Au changement de langue : les libellés des filtres et les cartes changent,
+// mais le filtre sélectionné, lui, reste le même.
+onLanguageChange(() => {
+  renderFilters();
+  render();
+});
