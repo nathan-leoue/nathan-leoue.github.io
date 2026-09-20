@@ -52,7 +52,7 @@ export const PROJECTS = [
     },
     tags: ["Python", "Local AI"],
     date: "2026-03",
-    url: "https://github.com/nathan-leoue",
+    url: "../404.html",
     image: "assets/projects/mei.jpg",
   },
   {
